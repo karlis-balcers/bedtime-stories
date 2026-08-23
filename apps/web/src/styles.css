@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+
+  --color-night: #0b0e14;
+  --color-night-2: #121722;
+  --color-night-3: #1a2130;
+  --color-ink: #ece7dc;
+  --color-muted: #9aa3b2;
+  --color-subtle: #6e7787;
+  --color-line: color-mix(in oklab, #ece7dc 12%, transparent);
+  --color-line-strong: color-mix(in oklab, #ece7dc 22%, transparent);
+  --color-moon: #c5d0de;
+  --color-moon-fg: #0b0e14;
+  --color-paper: #f3eee4;
+  --color-paper-ink: #1c1814;
+  --color-paper-muted: #6a6258;
+  --color-ember: #c9896a;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  --shadow-border: 0 0 0 1px color-mix(in oklab, #ece7dc 10%, transparent);
+  --shadow-lift: 0 0 0 1px color-mix(in oklab, #ece7dc 12%, transparent),
+    0 18px 40px -24px rgb(0 0 0 / 0.55);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+  body {
+    background: var(--color-night);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.starfield {
+  background-color: var(--color-night);
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(236, 231, 220, 0.7), transparent),
+    radial-gradient(1px 1px at 28% 72%, rgba(197, 208, 222, 0.45), transparent),
+    radial-gradient(1.5px 1.5px at 64% 22%, rgba(236, 231, 220, 0.55), transparent),
+    radial-gradient(1px 1px at 82% 58%, rgba(197, 208, 222, 0.4), transparent),
+    radial-gradient(1px 1px at 48% 44%, rgba(236, 231, 220, 0.35), transparent),
+    radial-gradient(1.5px 1.5px at 90% 12%, rgba(236, 231, 220, 0.5), transparent),
+    radial-gradient(1px 1px at 8% 88%, rgba(197, 208, 222, 0.35), transparent),
+    radial-gradient(1200px 600px at 80% -10%, rgba(197, 208, 222, 0.08), transparent),
+    radial-gradient(800px 400px at 10% 110%, rgba(26, 33, 48, 0.9), transparent);
+}
+
+.paper-page {
+  background: var(--color-paper);
+  color: var(--color-paper-ink);
+}
+
+.meter {
+  height: 8px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--color-ink) 10%, transparent);
+  overflow: hidden;
+}
+.meter > span {
+  display: block;
+  height: 100%;
+  background: var(--color-moon);
+  border-radius: inherit;
+}

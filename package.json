@@ -1,0 +1,9 @@
+{
+  "name": "moonlit",
+  "private": true,
+  "description": "Bedtime stories that remember — parent-controlled, audio-first.",
+  "workspaces": [
+    "apps/web",
+    "packages/story"
+  ]
+}

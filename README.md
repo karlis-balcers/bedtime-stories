@@ -4,7 +4,7 @@ Bedtime stories that remember.
 
 Moonlit is a parent-controlled, audio-first story product. The product owns the child’s universe; the model only performs the next episode.
 
-This repository is the long-term home of that system. A working web MVP (parent accounts, worlds, director pipeline, book + voice renderers) is running in the Grok app builder.
+This repository is the long-term home of that system. The working web MVP (parent accounts, worlds, director pipeline, book + voice renderers) lives in `apps/web`.
 
 ## What is implemented
 
